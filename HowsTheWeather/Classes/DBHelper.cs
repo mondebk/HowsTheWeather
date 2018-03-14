@@ -48,6 +48,7 @@ namespace HowsTheWeather.Classes
             sqLiteConnection.CreateTable<WeatherDTO>();
             sqLiteConnection.CreateTable<LocationTextDTO>();
             sqLiteConnection.CreateTable<ErrorLogDTO>();
+            sqLiteConnection.CreateTable<ForecastDTO>();
         }
 
 
@@ -98,6 +99,12 @@ namespace HowsTheWeather.Classes
         public void SaveNewError(ErrorLogDTO errorLog)
         {
             sqLiteConnection.Insert(errorLog);
+        }
+
+        public void SaveNewForecast(ForecastResponse forecast)
+        {
+            ForecastDTO forecastDTO = forecast.ConvertToDTO();
+            sqLiteConnection.Insert(forecastDTO);
         }
         #endregion
 
@@ -159,6 +166,21 @@ namespace HowsTheWeather.Classes
             {
                 errorLogger.LogError("GetSavedLocationText", ex.GetType().FullName, ex.Message, "Couldn't retrieve location text. Possibly empty table", 013);
                 return "Unable to retrieve location.";
+            }
+        }
+
+        public ForecastDTO GetSavedForecast()
+        {
+            try
+            {
+                var StoredForecast = sqLiteConnection.Query<ForecastDTO>("SELECT * FROM Forecast ORDER BY fID DESC");
+                ForecastDTO forecast = StoredForecast[0];
+                return forecast;
+            }
+            catch (Exception ex)
+            {
+                errorLogger.LogError("GetSavedLocationText", ex.GetType().FullName, ex.Message, "Couldn't retrieve location text. Possibly empty table", 013);
+                return new ForecastDTO();
             }
         }
         #endregion

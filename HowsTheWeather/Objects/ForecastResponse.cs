@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SQLite;
 
 namespace HowsTheWeather.Objects
 {
@@ -14,6 +15,17 @@ namespace HowsTheWeather.Objects
         public List<ForecastResponseList> list { get; set; }
 
         public City city { get; set; }
+
+        public ForecastDTO ConvertToDTO()
+        {
+            ForecastDTO forecastDTO = new ForecastDTO();
+            forecastDTO.code = code;
+            forecastDTO.message = message;
+            forecastDTO.cnt = cnt;
+            forecastDTO.list = list;
+            forecastDTO.city = city;
+            return forecastDTO;
+        }
     }
 
     public class ForecastResponseList {
@@ -47,5 +59,22 @@ namespace HowsTheWeather.Objects
         public double Temp_Min { get; set; }
 
         public double Temp_Max { get; set; }
+    }
+
+    [Table("Forecast")]
+    public class ForecastDTO
+    {
+        [PrimaryKey, AutoIncrement, NotNull, Unique]
+        public int fID { get; set; }
+        
+        public string code { get; set; }
+
+        public string message { get; set; }
+
+        public int cnt { get; set; }
+
+        public List<ForecastResponseList> list { get; set; }
+
+        public City city { get; set; }
     }
 }

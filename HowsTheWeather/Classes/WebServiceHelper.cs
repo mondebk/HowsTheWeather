@@ -23,6 +23,7 @@ namespace HowsTheWeather.Classes
         private ForecastResponse objForecastRestResponse;
         private MainDTO localMain;
         private WeatherDTO localWeather;
+        private ForecastDTO localForecast;
         private string strLocalLocation;
         private string strLatitude, strLongitude;
 
@@ -115,7 +116,7 @@ namespace HowsTheWeather.Classes
 
         private void LoadLocalForecast()
         {
-            
+            localForecast = db_helper.GetSavedForecast();
         }
 
         public Main GetMainWeatherInfo()
@@ -143,12 +144,20 @@ namespace HowsTheWeather.Classes
             return main_weather; 
         }
 
+        /// <summary>
+        /// Gets the weather info.
+        /// </summary>
+        /// <returns>The weather info.</returns>
         public Weather GetWeatherInfo()
         {
             Weather weather = objRestResponse.weather.FirstOrDefault(); //Only return information from the first weather result
             return weather;
         }
 
+        /// <summary>
+        /// Gets the location info.
+        /// </summary>
+        /// <returns>The location info.</returns>
         public string GetLocationInfo()
         {
             try
@@ -162,10 +171,15 @@ namespace HowsTheWeather.Classes
             } 
         }
 
+        /// <summary>
+        /// Gets the forecast response list.
+        /// </summary>
+        /// <returns>The forecast response list.</returns>
         public List<ForecastResponseList> GetForecastResponseList()
         {
             try
             {
+                db_helper.SaveNewForecast(objForecastRestResponse);
                 return objForecastRestResponse.list;
             }
             catch(Exception ex)
