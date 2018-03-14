@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{AF3755C5-D54F-4BD2-B8CD-398CD8FBF07E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="HowsTheWeather/Adapters/ForecastItemAdapter.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="HowsTheWeather/Classes/LocationHelper.cs" Line="7" Column="33" />
+      <File FileName="HowsTheWeather/Classes/LocationHelper.cs" Line="14" Column="9" />
       <File FileName="HowsTheWeather/Classes/WebServiceHelper.cs" Line="63" Column="1" />
-      <File FileName="HowsTheWeather/Adapters/ForecastItemAdapter.cs" Line="48" Column="21" />
+      <File FileName="HowsTheWeather/Adapters/ForecastItemAdapter.cs" Line="34" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.ItemProperties.HowsTheWeather AndroidDesignerPreferredDevice="Nexus 5X" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" AndroidDesignerPreferredTheme="Theme.DeviceDefault" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
