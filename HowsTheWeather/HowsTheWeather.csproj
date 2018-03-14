@@ -1,0 +1,133 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF3755C5-D54F-4BD2-B8CD-398CD8FBF07E}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HowsTheWeather</RootNamespace>
+    <AssemblyName>HowsTheWeather</AssemblyName>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Refractored.GifImageView">
+      <HintPath>..\packages\Refractored.GifImageView.2.0.0\lib\monoandroid\Refractored.GifImageView.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.106.2.1\lib\netstandard2.0\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Libraries\SQLite.cs" />
+    <Compile Include="Libraries\SQLiteAsync.cs" />
+    <Compile Include="Classes\DBHelper.cs" />
+    <Compile Include="Classes\ErrorLogger.cs" />
+    <Compile Include="Classes\WebServiceHelper.cs" />
+    <Compile Include="Classes\LocationHelper.cs" />
+    <Compile Include="Objects\Weather.cs" />
+    <Compile Include="Objects\Main.cs" />
+    <Compile Include="Objects\Wind.cs" />
+    <Compile Include="Objects\Clouds.cs" />
+    <Compile Include="Objects\WeatherResponse.cs" />
+    <Compile Include="Objects\Coord.cs" />
+    <Compile Include="Objects\Rain.cs" />
+    <Compile Include="Objects\Snow.cs" />
+    <Compile Include="Objects\Sys.cs" />
+    <Compile Include="Classes\ImagePickerHelper.cs" />
+    <Compile Include="Objects\ForecastResponse.cs" />
+    <Compile Include="Objects\City.cs" />
+    <Compile Include="Adapters\ForecastItemAdapter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml" />
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Logo.png" />
+    <AndroidResource Include="Resources\drawable\weather_loading.gif" />
+    <AndroidResource Include="Resources\drawable\sun_loader.gif" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\dark_clouds_warm.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\dark_cloudy.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\dark_fog.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\dark_light_storm.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\dark_lightning.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\dark_partly_cloudy.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\dark_rain.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\dark_snow_storm.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\dark_snow.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\dark_thunderstorm.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\drizzle.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\fog.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\mostly_sunny_dark.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\mostly_sunny_warm_dark.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\mostly_sunny_warm.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\mostly_sunny.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\overcast.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\partly_cloudy_warm.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\partly_sunny.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\rain.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\snow.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\sun_drizzle.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\sunny_hot.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\sunny_warm.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\sunny.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\warm_rain.png" />
+    <AndroidResource Include="Resources\values\Connections.xml" />
+    <AndroidResource Include="Resources\layout\forecast_item.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Activities\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Libraries\" />
+    <Folder Include="Resources\mipmap-xxhdpi\" />
+    <Folder Include="Objects\" />
+    <Folder Include="Adapters\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+</Project>

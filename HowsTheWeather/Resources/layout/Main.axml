@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8px">
+        <TextView
+            android:id="@+id/lblMainMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:lineSpacingExtra="8sp"
+            android:padding="4dp"
+            android:text="morning"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textSize="24sp"
+            android:typeface="normal" />
+        <TextView
+            android:id="@+id/lblMainDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblMainMessage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:fontFamily="serif"
+            android:text="The date"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+        <ImageView
+            android:id="@+id/imgMainWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblMainDate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="19dp" />
+        <TextView
+            android:id="@+id/lblMainTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgMainWeather"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp"
+            android:fontFamily="serif"
+            android:text="@string/loading_temp"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/lblMainMinTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblMainTemp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:fontFamily="serif"
+            android:text="@string/loading_maxmin"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/lblMainCurrentLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblMainMinTemp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="serif"
+            android:text="@string/loading_location"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/lblForecastList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="@string/forecast_message"
+            android:layout_marginTop="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/lblMainCurrentLocation"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <RelativeLayout
+            android:id="@+id/rlA"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="5dp"
+            android:background="#161616"
+            android:layout_below="@id/lblForecastList">
+            <TextView
+                android:id="@+id/lblTheDayA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/loading_forecast"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lvForcastItemListA"
+                android:layout_below="@id/lblTheDayA"
+                android:scrollIndicators="right" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rlB"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="5dp"
+            android:background="#161616"
+            android:layout_below="@+id/rlA">
+            <TextView
+                android:id="@+id/lblTheDayB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/loading_forecast"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lvForcastItemListB"
+                android:layout_below="@id/lblTheDayB" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rlC"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="5dp"
+            android:background="#161616"
+            android:layout_below="@id/rlB">
+            <TextView
+                android:id="@+id/lblTheDayC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/loading_forecast"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lvForcastItemListC"
+                android:layout_below="@id/lblTheDayC" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rlD"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="5dp"
+            android:background="#161616"
+            android:layout_below="@+id/rlC">
+            <TextView
+                android:id="@+id/lblTheDayD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/loading_forecast"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lvForcastItemListD"
+                android:layout_below="@id/lblTheDayD" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rlE"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="5dp"
+            android:background="#161616"
+            android:layout_below="@+id/rlD">
+            <TextView
+                android:id="@+id/lblTheDayE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/loading_forecast"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lvForcastItemListE"
+                android:layout_below="@id/lblTheDayE" />
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

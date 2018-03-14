@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">How\'s The Weather?</string>
+    <string name="permission_check">Checking permissions...</string>
+    <string name="get_location">Retreiving location...</string>
+    <string name="get_weather">Downloading weather data...</string>
+    <string name="error_location">Error retrieving location. Please try again later.</string>
+    <string name="morning_message">Good morning!</string>
+    <string name="afternoon_message">Good afternoon!</string>
+    <string name="evening_message">Good evening!</string>
+    <string name="forecast_message">Here\'s your forecast for the week</string>
+    <string name="loading_forecast">Loading forecast data...</string>
+    <string name="loading_temp">--°C</string>
+    <string name="loading_maxmin">--°C / --°C</string>
+    <string name="loading_location">Loading location...</string>
+    <string name="sunny">Sunny</string>
+    <string name="partlysunny">Partly Sunny</string>
+    <string name="overcast">Overcast</string>
+    <string name="cloudy">Cloudy</string>
+    <string name="snowy">Snowy</string>
+    <string name="rainy">Rainy</string> 
+    <string name="heavyrain">Heavy Rain</string> 
+    <string name="thunderstorm">Thunderstorm</string>
+    <string name="night_clear">Clear</string>
+</resources>
