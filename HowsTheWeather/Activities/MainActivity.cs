@@ -169,7 +169,7 @@ namespace HowsTheWeather
         public string GetTimeOfDay()
         {
             TimeSpan currentTime = DateTime.Now.TimeOfDay;
-            if(currentTime > TimeSpan.Parse("01:59") && currentTime < TimeSpan.Parse("12:00"))
+            if(currentTime > TimeSpan.Parse("00:00") && currentTime < TimeSpan.Parse("12:00"))
             {
                 return GetString(Resource.String.morning_message);
             }
@@ -177,7 +177,7 @@ namespace HowsTheWeather
             {
                 return GetString(Resource.String.afternoon_message);
             }
-            else if(currentTime > TimeSpan.Parse("17:59") && currentTime < TimeSpan.Parse("02:00"))
+            else if(currentTime > TimeSpan.Parse("17:59"))
             {
                 return GetString(Resource.String.evening_message);
             }
